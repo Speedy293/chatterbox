@@ -53,7 +53,7 @@ class Messages(webapp2.RequestHandler):
         error_messages = []
         error_fields = []
 
-        name = clean_input(self.request.get('name'))
+        name = clean_input(self.request.get('name'.strip(' ')))
         message = validator.name(name)
         if message:
             error_messages.append(message)
