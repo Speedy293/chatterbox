@@ -19,6 +19,9 @@ def content(val):
     if re.search(r'https?://', val, re.IGNORECASE):
         return "You can't post links!"
 
+    if not re.search(r'\S', val, re.IGNORECASE):
+        return "You must submit a message!"
+
     # Need more validators here
 
     return None
